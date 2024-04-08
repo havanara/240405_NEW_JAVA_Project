@@ -1,0 +1,28 @@
+package Word;
+
+import java.util.HashMap;
+
+public class WordManager {
+
+	private String word;
+	private String mean;
+	
+	HashMap<String, String> map = new HashMap<String, String>();
+	
+	public void wordAdd() {
+		
+	}
+	public void wordSearch() {
+		
+	}
+	public void wordEdit() {
+		
+	}
+	public void wordPrint() {
+		
+	}
+	public void wordPush() {
+		
+	}
+	
+}

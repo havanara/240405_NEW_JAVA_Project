@@ -1,0 +1,19 @@
+package jdbc;
+
+public class ProductServiceImpl implements Service {
+	
+	private DAO dao; //인터페이스
+	
+	//생성자
+	public ProductServiceImpl() {
+		dao = new ProductDAOImpl();
+	}
+
+	@Override
+	public int register(ProductVO p) {
+		// 실제 구현 영역
+		System.out.println("Register ServiceImpl Success!");
+		// 각 DAO에게 저장 요청
+		return 0;
+	}
+}

@@ -1,0 +1,16 @@
+package jdbc;
+
+public class ProductDAOImpl implements DAO{
+
+	
+	//DB연결
+	private Connection conn;
+	
+	//sql 구분을 실행시키는 기능하는 객체
+	private PreparedStatement pst;
+	
+	//쿼리 구문 저장 스트링
+	private String query="";
+	
+	public ProductDAOImpl
+}

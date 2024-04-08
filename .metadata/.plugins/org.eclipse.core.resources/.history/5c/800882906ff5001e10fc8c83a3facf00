@@ -1,0 +1,15 @@
+package jdbc;
+
+import java.sql.Connection;
+
+public class DatabaseConnection {
+
+	//DB접속
+	//DB Driver, Url, user, password
+	//com.mysql.cj.jdbc.Driver
+	//jdbc:mysql://localhost:3306/DB명
+	
+	private static DatabaseConnection dbc = new DatabaseConnection();
+	private Connection conn = null;
+	private String jdbcDriver = "com.mysql.cj.jdbc.Driver";
+}

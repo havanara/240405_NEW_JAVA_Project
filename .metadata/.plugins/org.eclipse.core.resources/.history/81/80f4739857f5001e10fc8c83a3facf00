@@ -1,0 +1,5 @@
+package new02;
+
+public class Singleton {
+
+}

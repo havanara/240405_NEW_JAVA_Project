@@ -1,0 +1,39 @@
+package Word;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class WordManager {
+
+	private String word;
+	private String mean;
+	
+	HashMap<String, String> map = new HashMap<String, String>();
+
+	public void wordAdd(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void wordSearch(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void wordEdit(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void wordPrint() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void wordPush(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

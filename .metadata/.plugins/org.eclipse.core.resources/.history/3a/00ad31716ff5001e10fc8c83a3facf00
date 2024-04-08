@@ -1,0 +1,9 @@
+package jdbc;
+
+public class DatabaseConnection {
+
+	//DB접속
+	//DB Driver, Url, user, password
+	//com.mysql.cj.jdbc.Driver
+	//jdbc:mysql://localhost:3306/DB명
+}

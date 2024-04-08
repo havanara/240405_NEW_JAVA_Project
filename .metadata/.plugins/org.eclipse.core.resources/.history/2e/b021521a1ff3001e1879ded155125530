@@ -1,0 +1,111 @@
+package Word;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class WordManager {
+
+	private String word;
+	private String mean;
+	
+	HashMap<String, String> map = new HashMap<String, String>();
+
+//	System.out.println("1.단어등록 2.단어검색 3.단어수정 4.단어출력");
+//	System.out.println("5.파일로 내보내기 6.종료");
+	public void wordAdd(Scanner scan) {
+		System.out.println("단어등록");
+		System.out.println("등록할 단어 > ");
+		word = scan.next();
+		System.out.println("등록할 단어의 뜻 > ");
+		mean = scan.next();
+		map.put(word, mean);
+		System.out.println("단어가 등록되었습니다.");
+	}
+	
+	public void wordSearch(Scanner scan) {
+		System.out.println("단어검색");
+		System.out.println("검색할 단어 > ");
+		word = scan.next();
+		if(map.containsKey(word)) {
+			System.out.println("[검색 결과]");
+			System.out.println(word+" : "+map.get(word));
+			return;
+		}else {
+			System.out.println("검색 결과가 없습니다.");
+		}
+	}
+
+	public void wordEdit(Scanner scan) {
+		System.out.println("단어수정");
+		System.out.println("수정할 단어 검색 > ");
+		word = scan.next();
+		if(map.containsKey(word)) {
+			System.out.println("[검색 결과]");
+			System.out.println(word+":"+map.get(word));
+			map.remove(word);
+			System.out.println("수정할 단어 > ");
+			word = scan.next();
+			System.out.println("수정할 단어의 뜻 > ");
+			mean = scan.next();
+			map.put(word, mean);
+			return;
+		}else {
+			System.out.println("수정할 단어가 없습니다.");
+		}
+	}
+
+	public void wordPrint() {
+		System.out.println("단어출력");
+		if(map.size()==0) {
+			System.out.println("등록 되어있는 단어가 없습니다.");
+			return;
+		}else {
+			for(String key : map.keySet()) {
+				System.out.println(key+" : "+map.get(key));
+			}
+		}
+	}
+	
+//	public void wordFile() throws IOException{
+//		FileWriter file = new FileWriter("word.txt");
+//		BufferedWriter bw = new BufferedWriter(file);
+//		
+//		StringBuffer sb = new StringBuffer();
+//		String data = null;
+//		sb.append("단어장");
+//		sb.append("\\r\\n");
+//		
+//		for(String key:map.keySet()) {
+//			sb.append(key+" : "+map.get(key));
+//			sb.append("\\r\\n");
+//		}
+//		data = sb.toString();
+//		bw.write(data);
+//		if(bw!=null) {
+//			bw.close();
+//		}
+//		if(file!=null) {
+//			file.close();
+//		}
+//	}
+
+	public void wordPush(Scanner scan) {
+		System.out.println("파일로 내보내기");
+		try {
+			FileWriter file = new FileWriter("word.txt");
+			for(String data : map.keySet()) {
+				file.write(data+" : "+map.get(data)+"\\r\\n");
+			}
+			if(file!=null) {
+				file.close();
+			}
+		} catch (Exception e) {
+			System.out.println("잘못된 값입니다.");
+		}
+	}
+
+	
+}

@@ -1,0 +1,31 @@
+package Word;
+
+import java.util.Scanner;
+
+public class WordMain {
+
+	public static void main(String[] args) {
+		/* 단어장 프로그램 작성
+		 * Word 클래스 생성
+		 * 단어, 의미
+		 * 
+		 * 메뉴
+		 * 1.단어등록 2.단어검색 3.단어수정 4.단어출력
+		 * 5.파일로 내보내기 6.종료
+		 * */
+
+		Scanner scan = new Scanner(System.in);
+		
+		WordManager wm = new WordManager();
+		
+		do {
+			System.out.println("--menu--");
+			System.out.println("1.단어등록 2.단어검색 3.단어수정 4.단어출력");
+			System.out.println("5.파일로 내보내기 6.종료");
+		}while();
+		
+		
+		scan.close();
+	}
+
+}

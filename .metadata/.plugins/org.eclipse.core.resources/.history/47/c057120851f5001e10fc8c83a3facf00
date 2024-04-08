@@ -1,0 +1,10 @@
+package new02;
+
+public class Singeton {
+
+	public static void main(String[] args) {
+		/* 싱글톤 패턴 : 디자인 패턴 중 하나
+		 * */
+	}
+
+}

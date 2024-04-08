@@ -1,0 +1,14 @@
+package new02;
+
+import java.io.BufferedReader;
+import java.net.URL;
+
+public class Network03 {
+
+	public static void main(String[] args) {
+		URL url = null;
+		String addr = "https://smartstore.naver.com/cotenim";
+		BufferedReader input = null;
+	}
+
+}

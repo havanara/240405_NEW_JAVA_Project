@@ -1,0 +1,14 @@
+package new02;
+
+class Conter{
+	// 싱글톤으로 객체 만들기
+	
+}
+
+public class SingletonCount {
+
+	
+	public static void main(String[] args) {
+	}
+
+}

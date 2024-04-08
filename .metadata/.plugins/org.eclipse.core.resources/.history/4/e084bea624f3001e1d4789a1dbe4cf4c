@@ -1,0 +1,15 @@
+package Word;
+
+public class Word {
+
+	public Word(String word, String mean) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Object getWord() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

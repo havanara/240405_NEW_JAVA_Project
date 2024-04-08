@@ -1,0 +1,21 @@
+package new02;
+
+class Conter{
+	// 싱글톤으로 객체 만들기
+	private int count;
+	
+	//countMethod() 생성
+	//호출 시 count 1씩 증가 리턴
+	public void countMethod() {
+		
+	}
+}
+
+public class SingletonCount {
+
+	
+	public static void main(String[] args) {
+		//count 객체 2개 생성 각각 countMethod()를 호출하여 출력
+	}
+
+}

@@ -1,0 +1,45 @@
+package word;
+
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class WordMainMap {
+
+	public static void main(String[] args) {
+		/* 단어장 프로그램 작성
+		 * 단어, 의미
+		 * 
+		 * 메뉴
+		 * 1.단어등록 2.단어검색 3.단어수정 4.단어출력
+		 * 5.파일로 내보내기 6.종료
+		 * */
+
+		Scanner scan = new Scanner(System.in);
+		
+		WordManagerMap wm = new WordManagerMap();
+		
+		int menu;
+		
+		do {
+			System.out.println("--menu--");
+			System.out.println("1.단어등록 2.단어검색 3.단어수정 4.단어출력");
+			System.out.println("5.파일로 내보내기 6.종료");
+			
+			menu = scan.nextInt();
+			
+			switch(menu) {
+			case 1 : wm.wordAdd(scan); break;
+			case 2 : wm.wordSearch(scan); break;
+			case 3 : wm.wordEdit(scan); break;
+			case 4 : wm.wordPrint(); break;
+			case 5 : wm.wordPush(scan); break;
+			default : System.out.println("잘못된 메뉴입니다."); break;
+			}
+			
+		}while(menu!=6);
+		System.out.println("종료합니다.");
+		
+		scan.close();
+	}
+
+}

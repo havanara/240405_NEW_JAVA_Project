@@ -1,0 +1,102 @@
+package board;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Objects;
+
+public class Board {
+	/* Board class 생성
+	 * 번호, 제목, 내용, 작성자, 작성일
+	 * - 번호 : 객체 생성시 자동으로 증가
+	 * - 작성일 : 오늘 날짜로 자동 생성 date형태 now 심플데이트포맷 날짜클래스 참고
+	 * - 번호가 일치하면 같은 게시물로 인지 equals 추가
+	 * 	 ex)1번 게시물 지워줘 -> 1번 게시물 삭제 처리
+	 * 번호는 자동증가 -> static
+	 * */ 
+	
+	private static int count; //자동증가 카운트
+	private int num;
+	private String title;
+	private String content;
+	private String writer;
+	private String registerDate;
+	
+	//생성자
+	public Board() {
+		count++; //번호추가
+		num = count;
+		this.registerDate = new Date();
+		SimpleDateFormat sh = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		this.registerDate = sh.format(register);
+	}
+	
+	public Board(String title, String content, String writer) {
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+	}
+	
+	//번호만 가지는 객체 생성
+	//번호가 일치하면 같은 게시물인지 equals 추가
+	public Board(int num) {
+		this.num = num;
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+
+	public String getRegisterDate() {
+		return registerDate;
+	}
+
+	public void setRegisterDate(String registerDate) {
+		this.registerDate = registerDate;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(num, title, content, writer, registerDate);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Board other = (Board) obj;
+		return num == other.num;
+	}
+
+}

@@ -1,0 +1,8 @@
+package jdbc;
+
+public class ProductController {
+
+	/* Controller <-> Service <-> DAO <-> DB
+	 * Controller 모든 메뉴에 분기 처리
+	 * */
+}

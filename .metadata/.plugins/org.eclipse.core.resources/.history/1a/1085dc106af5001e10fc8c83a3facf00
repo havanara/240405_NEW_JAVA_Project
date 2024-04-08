@@ -1,0 +1,19 @@
+package jdbc;
+
+public class ProductVO {
+/*
+ * create table product(
+pno int not null auto_increment,
+pname varchar(50) not null,
+price int not null default 0,
+regdate datetime default now(),
+madeby text,
+primary key(pno));
+*/
+	private int pno;
+	private String pname;
+	private int price;
+	private String regdate;
+	private String madeby;
+	
+}

@@ -1,0 +1,17 @@
+package jdbc;
+
+public class ProductServiceImpl implements Service {
+	
+	private DAO dao; //인터페이스
+	
+	//생성자
+	public ProductServiceImpl() {
+		dao = new ProductDAOImpl();
+	}
+
+	@Override
+	public int register(ProductVO p) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

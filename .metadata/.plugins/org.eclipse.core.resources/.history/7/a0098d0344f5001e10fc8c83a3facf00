@@ -1,0 +1,40 @@
+package board;
+
+import java.util.Scanner;
+
+public class BoardManager implements BoardInterface{
+
+	public void addBoard(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void searchBoard(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void modifyBoard(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void removeBoard(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void printBoard() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void printMenu() {
+		System.out.println("---------------menu---------------");
+		System.out.println("1.등록 2.검색 3.수정");
+		System.out.println("4.삭제 5.목록 6.종료");
+		System.out.println("menu > ");
+	}
+
+
+}

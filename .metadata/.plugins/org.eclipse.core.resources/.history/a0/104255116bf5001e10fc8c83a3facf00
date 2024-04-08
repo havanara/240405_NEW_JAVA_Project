@@ -1,0 +1,20 @@
+package jdbc;
+
+public class ProductVO {
+
+	private int pno; //자동생성
+	private String pname;
+	private int price;
+	private String regdate; //오늘날짜로 default now() 처리됨
+	private String madeby;
+	
+	//생성자
+	public ProductVO() {}
+	
+	//상품등록
+	public ProductVO(String pname, String regdate, String madeby) {
+		this.pname = pname;
+		this.regdate = regdate;
+		this.madeby = madeby;
+	}
+}

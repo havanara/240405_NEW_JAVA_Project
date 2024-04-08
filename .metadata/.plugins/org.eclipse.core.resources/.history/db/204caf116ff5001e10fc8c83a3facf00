@@ -1,0 +1,7 @@
+package jdbc;
+
+public class DatabaseConnection {
+
+	//DB접속
+	//DB Driver, Url, user, password
+}

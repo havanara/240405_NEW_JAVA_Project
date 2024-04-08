@@ -1,0 +1,14 @@
+package new02;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class Network02 {
+
+	public static void main(String[] args) throws IOException {
+		URL url = new URL("https://n.news.naver.com/mnews/article/009/0005284855");
+		System.out.println(url.getContent());
+	}
+
+}

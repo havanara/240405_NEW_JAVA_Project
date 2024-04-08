@@ -1,0 +1,9 @@
+package jdbc;
+
+public interface Service {
+
+	int register(ProductVO p);
+
+	List<ProductVO> getList();
+
+}

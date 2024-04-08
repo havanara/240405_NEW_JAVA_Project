@@ -1,0 +1,14 @@
+package jdbc;
+
+import java.util.Scanner;
+
+public class ProductController {
+
+	/* Controller <-> Service <-> DAO <-> DB
+	 * Controller 모든 메뉴에 분기 처리
+	 * */
+	
+	private Scanner scan;
+	private Service svc; // 아직 안만듦
+	private boolean flag; // 임의로 만든 종료 변수
+}
