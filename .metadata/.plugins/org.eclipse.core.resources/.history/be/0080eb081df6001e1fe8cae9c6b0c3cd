@@ -1,0 +1,5 @@
+package jdbcBoard;
+
+public class BoardServiceImpl implements Service {
+
+}

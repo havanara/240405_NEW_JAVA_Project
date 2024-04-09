@@ -1,0 +1,7 @@
+package jdbcBoard;
+
+public interface Service {
+
+	int register(BoardVO b);
+
+}

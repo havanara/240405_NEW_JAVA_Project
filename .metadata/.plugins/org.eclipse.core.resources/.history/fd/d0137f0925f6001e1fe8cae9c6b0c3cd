@@ -1,0 +1,53 @@
+package jdbcBoard;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class BoardDAOImpl implements DAO {
+
+	//DB연결
+	private Connection conn;
+	
+	//sql 구분을 실행시키는 기능하는 객체
+	private PreparedStatement bst;
+	
+	//쿼리 구문 저장 스트링
+	private String query="";
+	
+	public BoardDAOImpl() {
+		DatabaseConnection dbc = DatabaseConnection.getInstance();
+		conn = dbc.getConnection();
+	}
+	
+	@Override
+	//게시글 등록
+	public int insert(BoardVO b) {
+		System.out.println("Insert DAOImpl Success!");
+//		String title, String writer, String content
+		query = "insert into board(title,writer,content) values(?,?,?)";
+		try {
+			bst = conn.prepareStatement(query);
+			bst.setString(1, b.getTitle());
+			bst.setString(2, b.getWriter());
+			bst.setString(3, b.getContent());
+			//insert, update, delete -> executeUpdate() return int(처리된 개수로 리턴)
+			//만들어진 bst에서 실행하고 처리해줌
+			return bst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Insert Error!");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	@Override
+	//게시글 검색
+	public BoardVO selectOne(int bno) {
+		System.out.println("selectOne DAOImpl Success!");
+//		int bno, String title, String writer
+		query = "select * from product where pno=?";
+		return null;
+	}
+
+}

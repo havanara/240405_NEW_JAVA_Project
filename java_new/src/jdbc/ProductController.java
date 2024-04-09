@@ -41,11 +41,31 @@ public class ProductController {
 	}
 
 	private void remove() {
-		
+		//상품 삭제 delete from product where pno=?
+		System.out.println("삭제하려는 상품 번호 > ");
+		int pno = scan.nextInt();
+		int isOK = svc.getRemove(pno);
+		//잘되면 1, 안되면 0이 리턴됨
+		System.out.println("상품삭제"+((isOK > 0)? "성공":"실패"));
 	}
 
 	private void modify() {
+		//상품 내용 수정 update product(테이블명) set pname=?, price=?, madeby=? where pno=?
+		System.out.println("수정하려는 번호 > ");
+		int pno = scan.nextInt();
+		System.out.println("상품이름 > ");
+		scan.nextLine();
+		String pname = scan.nextLine();
+		System.out.println("상품가격 > ");
+		int price = scan.nextInt();
+		System.out.println("상품상세내역 > ");
+		scan.nextLine();
+		String madeby = scan.nextLine();
 		
+		ProductVO p = new ProductVO(pno, pname, price, madeby);
+		int isOK = svc.modify(p);
+		//잘되면 1, 안되면 0이 리턴됨
+		System.out.println("상품수정"+((isOK > 0)? "성공":"실패"));
 	}
 
 	private void detail() {

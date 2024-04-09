@@ -1,0 +1,11 @@
+package jdbcBoard;
+
+public interface Service {
+
+	int register(BoardVO b);
+
+	BoardVO search(int bno);
+
+	int modify(BoardVO b);
+
+}

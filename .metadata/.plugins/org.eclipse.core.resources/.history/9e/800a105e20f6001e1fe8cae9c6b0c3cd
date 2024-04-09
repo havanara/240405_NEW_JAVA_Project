@@ -1,0 +1,30 @@
+package jdbcBoard;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import jdbc.DatabaseConnection;
+
+public class BoardDAOImpl implements DAO {
+
+	//DB연결
+	private Connection conn;
+	
+	//sql 구분을 실행시키는 기능하는 객체
+	private PreparedStatement bst;
+	
+	//쿼리 구문 저장 스트링
+	private String query="";
+	
+	public BoardDAOImpl() {
+		jdbcBoard.DatabaseConnection dbc = jdbcBoard.DatabaseConnection.getInstance();
+		conn = dbc.getConnection();
+	}
+	
+	@Override
+	public int insert(BoardVO b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

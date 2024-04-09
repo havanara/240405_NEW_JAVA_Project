@@ -1,0 +1,16 @@
+package jdbcBoard;
+
+public class BoardVO {
+	private int bno;
+	private String title; //제목
+	private String writer; //작성자
+	private String content; //내용
+	private String regdate; //작성일
+	private String moddate;
+	
+	//생성자
+	public BoardVO() {}
+	
+	//게시글 등록
+
+}

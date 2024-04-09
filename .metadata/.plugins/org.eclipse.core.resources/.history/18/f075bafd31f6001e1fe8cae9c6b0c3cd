@@ -1,0 +1,13 @@
+package jdbcBoard;
+
+public interface DAO {
+
+	int insert(BoardVO b);
+
+	BoardVO selectOne(int bno);
+
+	int update(BoardVO b);
+
+	int delete(int bno);
+
+}

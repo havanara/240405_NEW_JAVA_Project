@@ -31,4 +31,16 @@ public class ProductServiceImpl implements Service {
 		System.out.println("Detail SericeImpl Success!");
 		return dao.selectOne(pno);
 	}
+
+	@Override
+	public int modify(ProductVO p) {
+		System.out.println("Modify SericeImpl Success!");
+		return dao.update(p);
+	}
+
+	@Override
+	public int getRemove(int pno) {
+		System.out.println("Remove SericeImpl Success!");
+		return dao.delete(pno);
+	}
 }

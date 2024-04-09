@@ -1,0 +1,63 @@
+package jdbcBoard;
+
+import java.util.Scanner;
+
+public class BoardController {
+	
+	private Scanner scan;
+	private Service svc; //interface
+	private boolean flag; //임의로 만든 종료 변수
+	
+	public BoardController() {
+		scan = new Scanner(System.in);
+		svc = new BoardServiceImpl(); //service의 구현체
+		flag = true; //종료 변수 처리
+		printMenu();
+	}
+
+	private void printMenu() {
+		while(flag) { //flag가 true면 계속 반복됨
+			System.out.println("-----------------게시판-----------------");
+			System.out.println("1.게시글 등록 | 2.게시글 검색 | 3.게시글 수정");
+			System.out.println("4.게시글 삭제 | 5.게시글 목록 | 6.종료");
+			System.out.println("메뉴 선택 > ");
+			
+			int menu = scan.nextInt();
+			
+			switch(menu) {
+			case 1 : register(); break;
+			case 2 : search(); break;
+			case 3 : modify(); break;
+			case 4 : remove(); break;
+			case 5 : list(); break;
+			default : flag=false; break; //종료변수인 flag를 false 처리하여 종료!
+			}
+		}
+	}
+
+	private void register() {
+		// 게시글 등록
+		
+	}
+
+	private void search() {
+		// 게시글 검색
+		
+	}
+
+	private void modify() {
+		// 게시글 수정
+		
+	}
+
+	private void remove() {
+		// 게시글 삭제
+		
+	}
+
+	private void list() {
+		// 게시글 목록
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package jdbcBoard;
+
+import java.util.Scanner;
+
+public class BoardController {
+	
+	private Scanner scan;
+	private Service svc; //interface
+	private boolean flag; //임의로 만든 종료 변수
+
+}

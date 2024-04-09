@@ -1,0 +1,13 @@
+package jdbcBoard;
+
+public class BoardServiceImpl implements Service {
+	
+	private DAO dao; //interface
+
+	@Override
+	public int register(BoardVO b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

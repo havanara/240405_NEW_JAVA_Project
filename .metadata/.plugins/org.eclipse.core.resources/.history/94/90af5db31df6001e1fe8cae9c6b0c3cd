@@ -1,0 +1,20 @@
+package jdbcBoard;
+
+//import jdbc.ProductDAOImpl;
+
+public class BoardServiceImpl implements Service {
+	
+	private DAO dao; //interface
+	
+	//생성자
+	public BoardServiceImpl() {
+		dao = new BoardServiceImpl();
+	}
+
+	@Override
+	public int register(BoardVO b) {
+		System.out.println("Register ServiceImpl Success!");
+		return dao.insert(b);
+	}
+
+}

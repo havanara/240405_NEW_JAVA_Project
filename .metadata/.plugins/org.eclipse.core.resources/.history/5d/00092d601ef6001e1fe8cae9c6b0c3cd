@@ -1,0 +1,11 @@
+package jdbcBoard;
+
+public class BoardDAOImpl implements DAO {
+
+	@Override
+	public int insert(BoardVO b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

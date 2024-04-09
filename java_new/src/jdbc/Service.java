@@ -10,4 +10,8 @@ public interface Service {
 
 	ProductVO getDetail(int pno);
 
+	int modify(ProductVO p);
+
+	int getRemove(int pno);
+
 }

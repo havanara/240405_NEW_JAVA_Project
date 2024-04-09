@@ -1,0 +1,95 @@
+package jdbcBoard;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class BoardController {
+	
+	private Scanner scan;
+	private Service svc; //interface
+	private boolean flag; //임의로 만든 종료 변수
+	
+	public BoardController() {
+		scan = new Scanner(System.in);
+		svc = new BoardServiceImpl(); //service의 구현체
+		flag = true; //종료 변수 처리
+		printMenu();
+	}
+
+	private void printMenu() {
+		while(flag) { //flag가 true면 계속 반복됨
+			System.out.println("-----------------게시판-----------------");
+			System.out.println("1.게시글 등록 | 2.게시글 검색 | 3.게시글 수정");
+			System.out.println("4.게시글 삭제 | 5.게시글 목록 | 6.종료");
+			System.out.println("메뉴 선택 > ");
+			
+			int menu = scan.nextInt();
+			
+			switch(menu) {
+			case 1 : register(); break;
+			case 2 : search(); break;
+			case 3 : modify(); break;
+			case 4 : remove(); break;
+			case 5 : list(); break;
+			default : flag=false; break; //종료변수인 flag를 false 처리하여 종료!
+			}
+		}
+	}
+
+	private void register() {
+		// 게시글 등록
+//		String title, String writer, String content
+		System.out.println("게시글 제목 > ");
+		scan.nextLine();
+		String title = scan.nextLine();
+		System.out.println("작성자 > ");
+		String writer = scan.nextLine();
+		System.out.println("게시글 내용 > ");
+		String content = scan.nextLine();
+		BoardVO b = new BoardVO(title, writer, content);
+		int isOK = svc.register(b);
+		System.out.println("게시글 등록"+((isOK>0)?" 성공":" 실패"));
+	}
+
+	private void search() {
+		// 게시글 검색
+//		int bno, String title, String content, String writer
+		System.out.println("검색할 게시글 번호 > ");
+		int bno = scan.nextInt();
+		BoardVO b = svc.search(bno);
+		System.out.println(b);
+	}
+
+	private void modify() {
+		// 게시글 수정
+//		int bno, String title, String writer, String content, String moddate
+		System.out.println("수정할 게시글 번호 > ");
+		int bno = scan.nextInt();
+		System.out.println("수정할 게시글 제목 > ");
+		scan.nextLine();
+		String title = scan.nextLine();
+		System.out.println("수정할 게시글 작성자 > ");
+		String writer = scan.nextLine();
+		System.out.println("수정할 게시글 내용 > ");
+		String content = scan.nextLine();
+		LocalDate now = LocalDate.now();
+		String moddate += now;
+		
+		BoardVO b = new BoardVO(bno,title,writer,content,moddate);
+		int isOK = svc.modify(b);
+		//잘되면 1, 안되면 0이 리턴됨
+		System.out.println("게시글 수정"+((isOK > 0)? " 성공":" 실패"));
+
+	}
+
+	private void remove() {
+		// 게시글 삭제
+		
+	}
+
+	private void list() {
+		// 게시글 목록
+		
+	}
+
+}

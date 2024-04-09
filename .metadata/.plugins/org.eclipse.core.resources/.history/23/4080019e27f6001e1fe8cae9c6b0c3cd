@@ -1,0 +1,9 @@
+package jdbcBoard;
+
+public interface DAO {
+
+	int insert(BoardVO b);
+
+	BoardVO selectOne(int bno);
+
+}
